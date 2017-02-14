@@ -55,16 +55,20 @@ def cut_bottom(im: Image):
     crop = im.crop((0, 0, 555, current_height))
     return crop
 
-if __name__ == '__main__':
+
+def get_img(text: str):
+    global i
     i = add_top(i)
-    input_text = "Has anyone ever been far as decided to look even more like?"
-    text_lines = textwrap.wrap(input_text, 28)
+    text_lines = textwrap.wrap(text, 28)
     for line in text_lines:
         i = add_line(i)
         drawline(i, line)
     i = add_bottom(i)
     i = cut_bottom(i)
-    i.show()
+    return i
 
+if __name__ == '__main__':
+    input_text = input("Insert the text: ")
+    get_img(text=input_text).show()
 
 
