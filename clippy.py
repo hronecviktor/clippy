@@ -2,9 +2,9 @@ from PIL import Image, ImageFont, ImageDraw
 import textwrap
 
 
-CLIPPY_TOP = '/top.png'
-CLIPPY_MID = '/mid.png'
-CLIPPY_LOW = '/low.png'
+CLIPPY_TOP = './top.png'
+CLIPPY_MID = './mid.png'
+CLIPPY_LOW = './low.png'
 
 line_count = 0
 current_height = 0
