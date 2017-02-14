@@ -1,15 +1,18 @@
 from PIL import Image, ImageFont, ImageDraw
 import textwrap
+import os
 
 
-CLIPPY_TOP = './top.png'
-CLIPPY_MID = './mid.png'
-CLIPPY_LOW = './low.png'
+CLIPPY_TOP = os.path.join(os.path.dirname(__file__), 'top.png')
+CLIPPY_MID = os.path.join(os.path.dirname(__file__), 'mid.png')
+CLIPPY_LOW = os.path.join(os.path.dirname(__file__), 'low.png')
+
 
 line_count = 0
 current_height = 0
 line_height = 35
-font = ImageFont.truetype("COURIER.TTF", size=30, encoding="utf-8")
+font_path = os.path.join(os.path.dirname(__file__), 'COURIER.TTF')
+font = ImageFont.truetype(font_path, size=30, encoding="utf-8")
 i = Image.new('RGB', (555, 1000))
 draw = ImageDraw.Draw(i)
 
